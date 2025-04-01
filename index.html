@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Card  -->
+    <div class="card">
+      <!-- Card Result  -->
+      <div class="card__result">
+        <div class="card__result-content">
+          <h4 class="card__result-title">Your Result</h4>
+
+          <div class="card__result-score">
+            <p class="card__result-value">76</p>
+            <small class="card__result-total">of 100</small>
+          </div>
+
+          <h3 class="card__result-heading">Great</h3>
+          <p class="card__result-description">
+            Your performance exceed 65% of the people conducting the test here!
+          </p>
+        </div>
+      </div>
+      <!-- End of Card Result  -->
+
+      <!-- Card Summary  -->
+      <div class="card__summary">
+        <h4 class="card__summary-title">Summary</h4>
+
+        <div class="card__summary-wrapper"></div>
+
+        <button type="button" class="card__summary-btn">Continue</button>
+      </div>
+      <!-- End of Card Summary  -->
+    </div>
+    <!-- End of Card  -->
+
+    <div class="result-container"></div>
+
+    <div class="attribution" hidden>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Jozef Kudrna</a>.
+    </div>
+
+    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

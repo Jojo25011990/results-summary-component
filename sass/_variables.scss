@@ -1,0 +1,22 @@
+// *** Variables ***
+$color-red: hsl(0, 100%, 67%);
+$color-yellow: hsl(39, 100%, 56%);
+$color-green: hsl(166, 100%, 37%);
+$color-blue: hsl(234, 85%, 45%);
+
+$color-white: hsl(0, 0%, 100%);
+
+$color-pale-blue: hsl(222, 100%, 96%);
+
+$color-light-lavender: hsl(241, 100%, 89%);
+
+$color-dark-gray-blue: hsl(224, 30%, 27%);
+
+$gradient-primary: linear-gradient(
+  to bottom,
+  #7755ff 0%,
+  #6943ff 0%,
+  #2f2ce9 100%
+);
+
+$gradient-secondary: linear-gradient(to bottom, #4d21c9 0%, #2421c935 100%);

@@ -1,0 +1,245 @@
+@forward './reset';
+@use './index' as *;
+
+// *** Html ***
+
+html {
+  @media (max-width: 760px) {
+    font-size: 50%;
+  }
+}
+// *** End of Html ***
+
+// *** Body ***
+body {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $color-pale-blue;
+
+  font-family: 'Hanken Grotesk', serif;
+
+  @include font-settings(1.6rem, 400, 150%);
+  @include flex-settings;
+}
+// *** End of Body ***
+
+// *** Card ***
+.card {
+  border-radius: 3.2rem;
+  background-color: $color-white;
+  box-shadow: 0 3rem 6rem rgba($color-blue, $alpha: 0.15);
+
+  @include dimension-settings(100%, 51.2rem, null, 73.6rem);
+  @include flex-settings;
+
+  @media (max-width: 610px) {
+    overflow: hidden;
+
+    @include dimension-settings(100%, auto, null, 38rem);
+    @include flex-settings($direction: column);
+  }
+
+  // *** Card Result ***
+  &__result {
+    border-radius: 3.2rem;
+
+    background: $gradient-primary;
+
+    padding: 5.4rem;
+
+    @include dimension-settings(50%, 100%);
+
+    @media (max-width: 610px) {
+      @include dimension-settings(100%, 50%);
+    }
+
+    // *** Content ***
+    &-content {
+      color: $color-light-lavender;
+
+      @include flex-settings($direction: column);
+      @include font-settings(1.8rem, 500);
+    }
+    // *** End of Content ***
+
+    // *** Title ***
+    &-title {
+      margin-bottom: 3.5rem;
+
+      @include font-settings(2.4rem, 700);
+    }
+    // *** End of Title ***
+
+    // *** Score && Value && Total ***
+    &-score {
+      margin-bottom: 3rem;
+
+      border-radius: 50%;
+
+      background: $gradient-secondary;
+
+      @include dimension-settings(20rem, 20rem);
+      @include flex-settings($direction: column);
+    }
+
+    &-value {
+      color: $color-white;
+
+      @include font-settings(7.2rem, 900, 7.2rem);
+    }
+
+    &-total {
+      opacity: 0.51;
+
+      @include font-settings($weight: 700);
+    }
+    // *** End of Score && Value && Total ***
+
+    // *** Heading ***
+    &-heading {
+      color: $color-white;
+
+      margin-bottom: 1.4rem;
+
+      @include font-settings(3.2rem, 700);
+    }
+    // *** End of Heading ***
+
+    // *** Description ***
+    &-description {
+      text-align: center;
+    }
+    // *** End of Description ***
+  }
+  // *** End of Card Result ***
+
+  // *** Card Summary ***
+  &__summary {
+    padding: 4rem;
+
+    @include dimension-settings(50%, 100%);
+
+    @media (max-width: 610px) {
+      @include dimension-settings(100%, 50%);
+    }
+
+    // *** Title ***
+    &-title {
+      color: $color-dark-gray-blue;
+
+      @include font-settings(2.4rem, 700);
+    }
+    // *** End of Title ***
+
+    // *** Wrapper ***
+    &-wrapper {
+      margin-top: 2.8rem;
+      margin-bottom: 4.1rem;
+
+      @include flex-settings(null, null, column, 1.6rem);
+    }
+    // *** End of Wrapper ***
+
+    // *** Item ***
+    &-item {
+      color: $color-red;
+      background-color: rgba($color-red, $alpha: 0.05);
+      border-radius: 1.2rem;
+
+      @include dimension-settings(100%, 5.6rem);
+      @include flex-settings;
+      @include font-settings(1.8rem, 500);
+
+      &:nth-of-type(2) {
+        color: $color-yellow;
+        background-color: rgba($color-yellow, $alpha: 0.05);
+      }
+      &:nth-of-type(3) {
+        color: $color-green;
+        background-color: rgba($color-green, $alpha: 0.05);
+      }
+      &:nth-of-type(4) {
+        color: $color-blue;
+        background-color: rgba($color-blue, $alpha: 0.05);
+      }
+    }
+    // *** End of Item ***
+
+    // *** Category ***
+    &-category {
+      margin-left: 1.2rem;
+      margin-right: 8.1rem;
+
+      &--memory {
+        margin-right: 8.4rem !important;
+      }
+      &--verbal {
+        margin-right: 9.9rem !important;
+      }
+      &--visual {
+        margin-right: 10.2rem !important;
+      }
+    }
+    // *** End of Category ***
+
+    // *** Value && Strong ***
+    &-value {
+      color: $color-dark-gray-blue;
+
+      @include font-settings($weight: 700);
+
+      &--normal {
+        opacity: 0.5;
+      }
+
+      // *** This line is not necessary, it work fine without it ***
+      &--strong {
+        opacity: 1;
+      }
+    }
+
+    // *** End of Value && Strong ***
+
+    // *** Button ***
+    &-btn {
+      position: relative;
+      z-index: 2;
+
+      color: $color-white;
+      background-color: $color-dark-gray-blue;
+
+      border-radius: 12.8rem;
+
+      cursor: pointer;
+
+      @include dimension-settings(100%, 5.6rem, null, 28.8rem);
+      @include font-settings(1.8rem, 700, 5.6rem);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        border-radius: 12.8rem;
+        background: $gradient-primary;
+
+        opacity: 0;
+
+        transition: opacity 0.275s;
+
+        @include dimension-settings(100%, 100%);
+      }
+
+      &:hover::before,
+      &:active::before {
+        opacity: 1;
+      }
+    }
+    // *** End of Button ***
+  }
+  // *** End of Card Summary ***
+}
+// *** End of Card ***
