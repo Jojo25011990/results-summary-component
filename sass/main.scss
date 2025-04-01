@@ -12,13 +12,11 @@ html {
 
 // *** Body ***
 body {
-  width: 100vw;
-  height: 100vh;
-
   background-color: $color-pale-blue;
 
   font-family: 'Hanken Grotesk', serif;
 
+  @include dimension-settings(100vw, 100vh);
   @include font-settings(1.6rem, 400, 150%);
   @include flex-settings;
 }
